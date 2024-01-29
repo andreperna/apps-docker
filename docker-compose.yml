@@ -50,10 +50,18 @@ services:
     container_name: nginx
     restart: always
     ports:
-      - 8080:80
+      - 80:80
     volumes:
       - ${CONFIG_PATH}/nginx:/etc/nginx
       - ${DATA_PATH}/nginx/www:/usr/share/nginx/html
+
+  php-fpm:
+    image: php:8-fpm-alpine
+    container_name: php-fpm
+    restart: always
+    volumes:
+      - ${DATA_PATH}/nginx/www:/usr/share/nginx/html
+
 
 
 
