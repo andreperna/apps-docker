@@ -3,6 +3,7 @@ version: '3'
 services:
   web-python-blue:
     image: python:alpine
+    container_name: web-python-blue
     restart: always
     # entrypoint: python -m http.server -d /root/apps-docker/web-python-blue
     command: python -m http.server -d /root/apps-docker/web-python-blue
@@ -13,6 +14,7 @@ services:
 
   web-python-yellow:
     image: python:3-alpine
+    container_name: web-python-yellow
     restart: always
     # entrypoint: python -m http.server -d /root/apps-docker/web-python-yellow
     command: python -m http.server -d /root/apps-docker/web-python-yellow
@@ -23,6 +25,7 @@ services:
   
   web-node-http-server:
     image: node:20-alpine
+    container_name: web-node-http-server
     restart: always
     # entrypoint: sh -c "cd /root/apps-docker/web-node-http-server && npm start"
     command: sh -c "cd /root/apps-docker/web-node-http-server && npm start"
@@ -33,6 +36,7 @@ services:
 
   web-node-express-server:
     image: node:lts-alpine
+    container_name: web-node-express-server
     restart: always
     # entrypoint: sh -c "cd /root/apps-docker/web-node-express-server && npm start"
     command: sh -c "cd /root/apps-docker/web-node-express-server && npm start"
