@@ -43,6 +43,7 @@ services:
 
   ngnix:
     image: nginx:alpine
+    container_name: nginx
     restart: always
     ports:
       - 8080:80
