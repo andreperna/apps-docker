@@ -54,6 +54,7 @@ services:
     volumes:
       - ${CONFIG_PATH}/nginx:/etc/nginx
       - ${DATA_PATH}/nginx/www:/usr/share/nginx/html
+    # command: apk add --no-cache nginx-mod-http-fancyindex
 
   php-fpm:
     image: php:8-fpm-alpine
