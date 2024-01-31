@@ -78,17 +78,17 @@
 
 
 # default conf
-server {
-       root           /usr/share/nginx/html;
+# server {
+#        root           /usr/share/nginx/html;
 
-    location / {
-        autoindex on;
-    }
+#     location / {
+#         autoindex on;
+#     }
 
-    location ~ \.php$ {
-       fastcgi_pass   php-fpm:9000;
-       fastcgi_index  index.php;
-       fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
-       include        fastcgi_params;
-    }
-}
+#     location ~ \.php$ {
+#        fastcgi_pass   php-fpm:9000;
+#        fastcgi_index  index.php;
+#        fastcgi_param  SCRIPT_FILENAME  /scripts$fastcgi_script_name;
+#        include        fastcgi_params;
+#     }
+# }
