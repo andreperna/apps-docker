@@ -1,49 +1,49 @@
 version: '3'
 
 services:
-  web-python-blue:
-    image: python:alpine
-    container_name: web-python-blue
-    restart: always
-    # entrypoint: python -m http.server -d /root/apps-docker/web-python-blue
-    command: python -m http.server -d /root/apps-docker/web-python-blue
-    volumes:
-      - ./web-python-blue:/root/apps-docker/web-python-blue
-    ports:
-      - 8000:8000
+  # web-python-blue:
+  #   image: python:alpine
+  #   container_name: web-python-blue
+  #   restart: always
+  #   # entrypoint: python -m http.server -d /root/apps-docker/web-python-blue
+  #   command: python -m http.server -d /root/apps-docker/web-python-blue
+  #   volumes:
+  #     - ./web-python-blue:/root/apps-docker/web-python-blue
+  #   ports:
+  #     - 8000:8000
 
-  web-python-yellow:
-    image: python:3-alpine
-    container_name: web-python-yellow
-    restart: always
-    # entrypoint: python -m http.server -d /root/apps-docker/web-python-yellow
-    command: python -m http.server -d /root/apps-docker/web-python-yellow
-    volumes:
-      - ./web-python-yellow:/root/apps-docker/web-python-yellow
-    ports:
-      - 8001:8000
+  # web-python-yellow:
+  #   image: python:3-alpine
+  #   container_name: web-python-yellow
+  #   restart: always
+  #   # entrypoint: python -m http.server -d /root/apps-docker/web-python-yellow
+  #   command: python -m http.server -d /root/apps-docker/web-python-yellow
+  #   volumes:
+  #     - ./web-python-yellow:/root/apps-docker/web-python-yellow
+  #   ports:
+  #     - 8001:8000
   
-  web-node-http-server:
-    image: node:20-alpine
-    container_name: web-node-http-server
-    restart: always
-    # entrypoint: sh -c "cd /root/apps-docker/web-node-http-server && npm start"
-    command: sh -c "cd /root/apps-docker/web-node-http-server && npm start"
-    volumes:
-      - ./web-node-http-server:/root/apps-docker/web-node-http-server
-    ports:
-      - 8002:3000
+  # web-node-http-server:
+  #   image: node:20-alpine
+  #   container_name: web-node-http-server
+  #   restart: always
+  #   # entrypoint: sh -c "cd /root/apps-docker/web-node-http-server && npm start"
+  #   command: sh -c "cd /root/apps-docker/web-node-http-server && npm start"
+  #   volumes:
+  #     - ./web-node-http-server:/root/apps-docker/web-node-http-server
+  #   ports:
+  #     - 8002:3000
 
-  web-node-express-server:
-    image: node:lts-alpine
-    container_name: web-node-express-server
-    restart: always
-    # entrypoint: sh -c "cd /root/apps-docker/web-node-express-server && npm start"
-    command: sh -c "cd /root/apps-docker/web-node-express-server && npm start"
-    volumes:
-      - ./web-node-express-server:/root/apps-docker/web-node-express-server
-    ports:
-      - 8003:3000
+  # web-node-express-server:
+  #   image: node:lts-alpine
+  #   container_name: web-node-express-server
+  #   restart: always
+  #   # entrypoint: sh -c "cd /root/apps-docker/web-node-express-server && npm start"
+  #   command: sh -c "cd /root/apps-docker/web-node-express-server && npm start"
+  #   volumes:
+  #     - ./web-node-express-server:/root/apps-docker/web-node-express-server
+  #   ports:
+  #     - 8003:3000
 
   ngnix:
     image: nginx:alpine
@@ -66,6 +66,12 @@ services:
     restart: always
     volumes:
       - ${DATA_PATH}/nginx/www:/usr/share/nginx/html
+
+  regextester:
+    container_name: regextester
+    build: nginx-regex-tester/regextester
+    ports:
+      - "8080:80"
 
 
 
