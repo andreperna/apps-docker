@@ -67,11 +67,11 @@ services:
     volumes:
       - ${DATA_PATH}/nginx/www:/usr/share/nginx/html
 
-  regextester:
-    container_name: regextester
-    build: nginx-regex-tester/regextester
-    ports:
-      - "8080:80"
+  # regextester:
+  #   container_name: regextester
+  #   build: nginx-regex-tester/regextester
+  #   ports:
+  #     - "8080:80"
 
 
 
