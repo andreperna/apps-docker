@@ -56,6 +56,7 @@ services:
       - ${CONFIG_PATH}/nginx-nginx.conf:/etc/nginx/nginx.conf
       - ${CONFIG_PATH}/nginx-default.conf:/etc/nginx/conf.d/default.conf
       - ${DATA_PATH}/nginx/www:/usr/share/nginx/html
+      - ${DATA_PATH}/nginx/log:/var/log/nginx
     # command: apk add --no-cache nginx-mod-http-fancyindex
     # command: ["apk update", "&&", "nginx", "-g" ,"daemon off;"]
     # command: sh -c "nginx -g daemon off;"
