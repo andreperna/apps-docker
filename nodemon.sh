@@ -1,1 +1,1 @@
-nodemon -e conf --exec ./nginx-reload.bat
+nodemon -e conf --exec sh -c eval \"sh ./nginx-reload.sh\"
